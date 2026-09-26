@@ -1,8 +1,6 @@
 # SkillPoison
 
-Code for **SkillPoison: Progressive Skill Poisoning via Successful Experiences** (ICLR 2027, under review).
-
-Anonymous artifact: <https://anonymous.4open.science/r/SkillPoison-42C5>
+Code for **SkillPoison: Progressive Skill Poisoning via Successful Experiences** 
 
 ## Code Structure
 
