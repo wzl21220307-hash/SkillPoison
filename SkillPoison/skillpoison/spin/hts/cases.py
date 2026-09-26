@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""§3.1 HPS — case enumeration over the formation distribution.
 
-    x ~ D_form( . | A(x,c)=1 )
-
-Candidates are drawn from REAL PAWS data with an official paraphrase label. Both
-evaluation pools are excluded, so every case is verifier-passing and zero-overlap.
-"""
 from __future__ import annotations
 
 import json
