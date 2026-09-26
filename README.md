@@ -52,8 +52,4 @@ SkillPoison/
 
 The folder names `hps/`, `egsa/`, and `ceir/` are retained for code compatibility; the stage names above follow the paper.
 
-## Release Scope
-
-This repository contains the three core method stages and a record-format helper. Frozen formation assets, raw datasets, native Skill extraction, and downstream evaluation are not included. The data-dependent method script requires external assets supplied through `SKILLPOISON_DATA_ROOT` and stops before the native extractor. 
-
 
