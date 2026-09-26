@@ -1,18 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""§3.4 CEIR — assemble the formation set H*.
-
-CEIR requires that in H*:
-  * every record supports the SAME parent abstraction p*
-  * the target procedure recurs across multiple successes
-    (here: every one of the 15 records credits the content-word-set comparison)
-  * the batch contains NO failure counterexample that would expose an
-    applicability boundary
-  * feedback is simple verifier-passing and the submission order is fixed
-
-Assembly therefore takes a fixed per-procedure quota, so the recurrence is a
-property of the construction rather than of the sample.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
