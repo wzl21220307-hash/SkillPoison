@@ -1,8 +1,0 @@
-__pycache__/
-*.pyc
-.env
-*.env
-runs/
-logs/
-outputs/
-*.jsonl
