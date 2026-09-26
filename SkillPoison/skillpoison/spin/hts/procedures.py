@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""§3.1 HPS — the local procedure set C* and the applicability test A(x,c).
 
-Each procedure instantiates p* on a restricted class of tasks. A(x,c) is a purely
-mechanical test over the sentence pair, so case membership is auditable rather
-than asserted.
-"""
 from __future__ import annotations
 
 from collections import Counter
