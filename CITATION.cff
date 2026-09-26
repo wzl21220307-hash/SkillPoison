@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "SkillPoison: Progressive Skill Poisoning via Successful Experiences"
+message: "If you use this code, please cite the paper."
+type: software
+authors:
+  - name: "Anonymous"
+abstract: "Method-only release of SkillPoison: Hierarchical Procedure Selection (HPS), Local Evidence-Grounded Success Attribution (LEGSA), and Global Cross-Trajectory Inductive Reinforcement (GCTIR)."
+license: MIT
+year: 2027
