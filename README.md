@@ -1,6 +1,6 @@
 # SkillPoison
 
-Code for **SkillPoison: Progressive Skill Poisoning via Successful Experiences** (ICLR 2027, under review).
+Code for **SkillPoison: Progressive Skill Poisoning via Successful Experiences** .
 
 
 ## Framework
