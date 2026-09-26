@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""§3.4 CEIR — audits that must pass before H* is handed to the extractor.
 
-  clean-label  : no banned term, no imperative / meta-instruction in model-visible text
-  zero-overlap : no formation id appears in either evaluation pool
-  integrity    : no duplicate ids, all labels verified
-  direction    : every record credits the same target procedure (CEIR consistency)
-"""
 from __future__ import annotations
 
 from skillpoison.spin.ceir.assemble import FormationSet, recurrence_stats
