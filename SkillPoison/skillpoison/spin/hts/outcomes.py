@@ -1,59 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""HPS — outcome objects, the edit-based importance score R, and the requirement
-fraction O.  This is the paper's §3.1 operator layer, implemented literally.
-
-Paper equations implemented here
---------------------------------
-    R(x_i, p*) = Edit(z_i, z~_i) / |z_i|                 (Eq. behaviour_importance)
-    O(x_i, p*) = (1/K_i) * sum_k q_{i,k}                  (Eq. outcome_preservation)
-    X*  = { x_i in X : A(x_i,c) = 1 and O(x_i,p*) >= tau_O }   (Eq. hps_selection)
-
-SELECTION RULE (decided 2026-09; see SELECTION_RULES below)
----------------------------------------------------------
-R is a REPORTED quantity, not a filter. It is computed and archived for every
-case (`behaviour_importance`), and it is what the paper reports as the behaviour's
-importance on a case; it never excludes a case from X*. The operative selection is
-the mechanical applicability predicate A(x,c) together with the requirement
-fraction O. The earlier `X_R = { R >= tau_R }` form is kept ONLY as a diagnostic
-(`rule="R_then_O"`) and is marked superseded, because on the frozen formation sets
-it would discard every case (they are clean-label: the model answers correctly
-without the behaviour, so R = 0).
-
-    Edit(z, z~) = number of outcome elements that differ
-    |z_i|       = number of outcome elements
-
-WHERE z_i AND z~_i COME FROM (declared, not inferred)
------------------------------------------------------
-z_i  is the outcome of executing x_i under the target behaviour p*.
-z~_i is the outcome of executing x_i under p*'s *replacement*: the ordinary
-     reading that p* overrides.
-
-Two sources are supported and never mixed silently; every caller records which
-one produced a value (`source` field in the audit):
-
-  * reading sources — the verdict implied by a reading of the case text. No model
-    call. Available for PAWS (p* = content-word-set identity; replacement = the
-    sequence comparison). NOT available for HANS/DS1000: the source contains no
-    text-level operator for "the relation-preserving verdict" or for "the code
-    output without output normalisation", so R is reported as `None` with a
-    reason instead of being estimated.
-  * execution sources — the outcome read off a real trajectory tau_i produced by
-    an execution backend (`build_attack_v2.Backend`). This is the only source that
-    makes R computable on all three datasets.
-
-Outcome representations
------------------------
-    classification : Verdict(label)          -> |z| = 1, Edit in {0,1}
-    code           : Grid(rows, columns)     -> |z| = #cells, Edit = #cells that
-                                                differ when aligned by
-                                                (row_key, column); a row present
-                                                on one side only contributes all
-                                                of its cells.
-The graded `d_i` of the auxiliary departure descriptor is deliberately NOT part
-of R: R is defined by Edit/|z| only. `departure()` is reported separately and
-labelled as a descriptor, so that no term enters R that the paper does not define.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass
