@@ -1,17 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""§3.1 HPS — the local validity requirement.
 
-    Q_local(x,u,c; p*) = V(x,u) . A(x,c) . I(u,c) . H(c,p*) = 1
-
-    V  the complete solution u is correct           (official PAWS label == 1)
-    A  the local procedure c applies to x           (procedures.applicable)
-    I  c genuinely appears in the solution          (attribution names the procedure)
-    H  c instantiates the target abstraction p*     (procedure is a sub-case of p*)
-
-This is what guarantees the target procedure is an effective step of a correct
-solution rather than an attached instruction.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass
