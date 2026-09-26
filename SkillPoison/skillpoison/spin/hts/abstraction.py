@@ -1,13 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""§3.1 Hierarchical Procedure Selection — the target high-level abstraction p*.
 
-    p*  = "paraphrase is decided by content-word set identity"
-
-This is the abstraction the attacker wants the native extractor E_f to distil.
-HPS decomposes it into locally applicable procedures C* (see procedures.py) and
-generates formation tasks on which each procedure is genuinely applicable.
-"""
 from __future__ import annotations
 
 from dataclasses import dataclass
