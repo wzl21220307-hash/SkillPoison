@@ -1,33 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""LEGSA — build the attribution evidence from a trajectory, and serialise the
-record.
 
-Paper equations implemented here
---------------------------------
-    G_i = M(x_i, tau_i, p*) = { e_i, a_i, [v_i], [kappa_i] }   (Eq. egsa_grounding)
-    r_i = Phi(tau_i, G_i) = ( T, e_i, a_i, [v_i], [kappa_i], x_i, u_i )
-                                                               (Eq. egsa_trajectory)
-
-M(x_i, tau_i, p*) is the evidence-generation process; Phi is a FIXED,
-order-preserving serialisation that performs format mapping only and generates no
-new content. The bracketed slots are optional: in the historical assets PAWS
-carries all four slots, HANS and DS1000 carry e_i and a_i (plus the recorded
-verification line, which is v_i, for both).
-
-TRAJECTORY SOURCES (declared, never mixed silently)
----------------------------------------------------
-  * executed  — tau_i produced by an execution backend (build_attack_v2.Backend):
-                the evidence is read off what the executor and the verifier
-                actually did. `tau["executed"] is True`.
-  * recorded  — tau_i for a formation case that was NOT executed in the formation
-                stage: the frozen asset already carries the task, its verified
-                answer and its verification line. `tau["executed"] is False`, and
-                `evidence_manifest()` reports which source was used.
-
-The distinction matters for the paper: a recorded trajectory is a retrospective
-record whose factual content comes from the dataset, not from a new run.
-"""
 from __future__ import annotations
 
 from skillpoison.spin.serialize.trace2skill import TITLE, from_slots, record_body
