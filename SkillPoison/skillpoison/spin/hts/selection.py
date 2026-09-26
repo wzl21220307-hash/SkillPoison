@@ -1,31 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""HPS — the candidate collection X and the already-selected formation set.
 
-    X  = the cases the attacker feeds into HPS
-    X* = the cases HPS keeps
-
-Two selection sources are implemented, and they are never mixed silently:
-
-  `fixed`  (default, per the current instruction: "选经验目前就用我们已经选好的")
-           X  = the 15 experiences already selected by the earlier pipeline, read
-                from their frozen assets.  HPS still runs on them -- the
-                applicability test A(x,c), R, O, the thresholds and GCTIR are all
-                computed and archived -- but the set that is carried forward is
-                the one already selected, so no existing asset is silently
-                rewritten.  Every case that the method would drop is listed in the
-                audit instead of being removed.
-
-  `search` X is enumerated from the raw dataset (`hps.cases.enumerate_cases`) and
-           X* is whatever the thresholds keep.  This is the paper-faithful path;
-           it requires the execution backend because R and O are defined on
-           execution outcomes (see outcomes.REPLACEMENT_READINGS).
-
-Applicability A(x, c) is per dataset and purely mechanical:
-    paws   : hps.procedures.applicable  (content-word multiset identity, >= 8 words)
-    hans   : the hypothesis is a contiguous surface span of the premise
-    ds1000 : the case belongs to one of the declared output-normalisation families
-"""
 from __future__ import annotations
 
 import json
