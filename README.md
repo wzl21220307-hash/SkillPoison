@@ -37,8 +37,8 @@ SkillPoison/
 ├── skillpoison/
 │   ├── spin/
 │   │   ├── hps/          # Hierarchical Task Selection
-│   │   ├── egsa/         # Local Evidence-Grounded Success Attribution
-│   │   ├── ceir/         # Global Cross-Experience Inductive Reinforcement
+│   │   ├── legsa/         # Local Evidence-Grounded Success Attribution
+│   │   ├── gceir/         # Global Cross-Experience Inductive Reinforcement
 │   │   ├── serialize/    # Trace2Skill record-format helper
 │   │   ├── execute/      # Reserved for task execution
 │   │   ├── extract/      # Reserved for native Skill formation
@@ -46,10 +46,5 @@ SkillPoison/
 │   │   └── registry/     # Reserved for dataset registration
 │   └── ablation/         # Reserved for ablation studies
 ├── docs/                 # Framework figure
-├── examples/             # Module examples
 └── requirements.txt
 ```
-
-The folder names `hps/`, `egsa/`, and `ceir/` are retained for code compatibility; the stage names above follow the paper.
-
-
