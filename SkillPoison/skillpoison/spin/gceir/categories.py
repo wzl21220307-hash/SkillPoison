@@ -1,34 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""GCTIR — category scoring and top-M selection.
-
-Aligned with the paper:
-
-    X*_j = {x_{j,k}},  R_j = {r_{j,k}}                 (Eq. gctir_group)
-    H_A  = union_j R_j                                 (Eq. gctir_pool)
-    S_j  = (1/N_j) sum_k R(x_{j,k}, p*)                          (Eq. category_relevance)
-    A_j  = (1/N_j) sum_k Sim(psi(tau_k), psi(p*))                (Eq. category_alignment)
-    Sim  = (1 + cos(.)) / 2  in [0,1]
-    U_j  = S_j + lambda * A_j                                    (Eq. category_score)
-    C*   = TopM({U_j})                                           (Eq. category_selection)
-
-Dist(., .) = 1 - cos(., .) is kept as a REPORTED diagnostic only (it is not part of
-U_j): the paper's category score adds the member-vs-p* alignment A_j, not a
-category-to-category distance.
-
-The category is the local procedure of HPS: every formation case already carries
-its procedure key, so grouping is a partition of the selected set, not a new
-clustering step. Two ingredients have to be *declared* because the earlier code
-had no counterpart for them:
-
-  * phi_j, the semantic representation of a category. Declared here as the
-    hashing bag-of-words embedding of the category's trigger phrase (the
-    procedure's description), which is dependency-free and deterministic.
-  * Dist(., .), declared as 1 - cosine similarity.
-
-Both are recorded in `representation_manifest()` so a different choice can be
-substituted without touching the scoring logic.
-"""
 from __future__ import annotations
 
 import hashlib
