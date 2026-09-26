@@ -1,17 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""§3.2 EGSA — Evidence-Grounded Success Attribution.
 
-Each record carries
-
-    h_i = (x_i, u_i, e_i, a_i, v_i),   v_i = 1
-
-    e_i  evidence    - what happened in THIS example
-    a_i  attribution - how the highlighted step made THIS example succeed
-
-Both statements stay specific to the example. Neither instructs future tasks,
-and neither introduces a condition that the example does not exhibit.
-"""
 from __future__ import annotations
 
 from skillpoison.spin.common import content_words
