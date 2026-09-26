@@ -36,7 +36,7 @@ The HPS, EGSA, CEIR, and serialization modules otherwise use the Python standard
 SkillPoison/
 ├── skillpoison/
 │   ├── spin/
-│   │   ├── hps/          # Hierarchical Task Selection
+│   │   ├── hts/          # Hierarchical Task Selection
 │   │   ├── legsa/         # Local Evidence-Grounded Success Attribution
 │   │   ├── gceir/         # Global Cross-Experience Inductive Reinforcement
 │   │   ├── serialize/    # Trace2Skill record-format helper
@@ -46,5 +46,4 @@ SkillPoison/
 │   │   └── registry/     # Reserved for dataset registration
 │   └── ablation/         # Reserved for ablation studies
 ├── docs/                 # Framework figure
-└── requirements.txt
 ```
