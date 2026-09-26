@@ -5,7 +5,7 @@ Code for **SkillPoison: Progressive Skill Poisoning via Successful Experiences**
 
 ## Framework
 
-![SkillPoison framework](SkillPoison-local/docs/framework.png)
+![SkillPoison framework](SkillPoison/docs/framework.png)
 
 *SkillPoison framework: (a) Hierarchical Task Selection, (b) Local Evidence-Grounded Success Attribution, and (c) Global Cross-Experience Inductive Reinforcement. This corresponds to Figure 3 in the paper.*
 
